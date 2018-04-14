@@ -8,6 +8,8 @@ library(SnowballC)
 library(wordcloud)
 library(RColorBrewer)
 
+rightTexter <- 'Johan'
+leftTexter <- 'Theo'
 mainLanguage <- 'swedish'
 
 # Loads parsed message data from file mess.RData
@@ -17,7 +19,7 @@ load('mess.RData')
 words <- unnest_tokens(mess, word, text)
 
 # Possible to filter word cloud by person, remove '||' and one name to use filter
-words <- filter(words, person == 'Theo' || person == 'Johan')
+words <- filter(words, person == leftTexter || person == rightTexter)
 
 # Removing stop words
 stop_words <- as_tibble(stopwords(mainLanguage)) %>%
