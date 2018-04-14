@@ -4,6 +4,7 @@ Visualization of iMessages between two people
 Some backgound.
 
 I made this for me (Johan) and my girlfriend (Theo), this is the reason these names apper in the code.
+I'm texting on the right side of the messenger app, Theo is on the left side.
 We text in swedish, the only time this becomes an issue is when generating the word cloud, see Step 2.C. 
 
 Code for R.
@@ -45,11 +46,11 @@ mainLanguage <- 'swedish'
 
 Word cloud for only one texter can be created by changing following code:
 
-words <- filter(words, person == 'Theo' || person == 'Johan') 
+words <- filter(words, person == leftTexter || person == rightTexter) 
 
 to
 
-words <- filter(words, person == 'Theo')
+words <- filter(words, person == leftTexter)
 
 The word cloud is generated as a plot which can be saved as a jpeg or a pdf.
 
