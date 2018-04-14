@@ -7,7 +7,7 @@
 
 # A tibble: 5 x 4
 #   person  text                          dateTime            weekday
-#   <fct>  <chr>                          <dttm>              <chr>  
+#   <fct>  <chr>                          <dttm>              <fct>  
 # 1 Johan  Till telefon                   2012-11-11 20:33:00 söndag 
 # 2 Theo   Haal                           2012-11-13 22:51:39 tisdag 
 # 3 Theo   Test sms til ad fixa iMessage  2012-11-14 16:27:03 onsdag 
@@ -74,7 +74,7 @@ mess <- mutate(mess, dateTime = as.POSIXct(paste(date, time, sep = ' '))) %>%
 mess$person <- as.factor(mess$person)
 
 # Adding weekday
-mess <- mutate(mess, weekday = weekdays.Date(dateTime))
+mess <- mutate(mess, weekday = as.factor(weekdays.Date(dateTime)))
 
 # Adding row id
 mess$id <- seq.int(nrow(mess))
