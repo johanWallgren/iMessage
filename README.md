@@ -1,8 +1,9 @@
 # iMessage
 Visualization of iMessages between two people
 
-Some backgound
-I made this for me (Johan) and my girlfriend (Theo). This is the reason these names apper in the code.
+Some backgound.
+
+I made this for me (Johan) and my girlfriend (Theo), this is the reason these names apper in the code.
 We text in swedish, the only time this becomes an issue is when generating the word cloud, see Step 2.C. 
 
 Code for R.
