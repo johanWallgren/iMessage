@@ -4,7 +4,6 @@
 library(tidyverse)
 library(tidytext)
 library(tm)
-library(SnowballC)
 library(wordcloud)
 library(RColorBrewer)
 
@@ -21,10 +20,17 @@ words <- unnest_tokens(mess, word, text)
 # Possible to filter word cloud by person, remove '||' and one name to use filter
 words <- filter(words, person == leftTexter || person == rightTexter)
 
-# Removing stop words
+# Tibble with stop words to be removed
 stop_words <- as_tibble(stopwords(mainLanguage)) %>%
   rename(word = value)
 
+# Remove all numbers as well
+stop_numbers <- as_tibble(as.character(seq(1:1e6))) %>%
+  rename(word = value)
+
+stop_words <- bind_rows(stop_words, stop_numbers)
+
+# Removing stop words
 words <- words %>%
   anti_join(stop_words)
 
