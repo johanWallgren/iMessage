@@ -10,12 +10,15 @@ library(tm)
 library(wordcloud)
 library(RColorBrewer)
 
-rightTexter <- 'Johan'
-leftTexter <- 'Theo'
-mainLanguage <- 'swedish'
-
 # Loads parsed message data from file mess.RData
 load('mess.RData')
+
+# Change names or language here:
+rightTexter <- unique(mess$person)[1]
+leftTexter <- unique(mess$person)[2]
+mainLanguage <- 'swedish'
+
+
 
 # Tibble with one word per row
 words <- unnest_tokens(mess, word, text)
