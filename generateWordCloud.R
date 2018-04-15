@@ -17,7 +17,7 @@ load('mess.RData')
 rightTexter <- unique(mess$person)[1]
 leftTexter <- unique(mess$person)[2]
 mainLanguage <- 'swedish'
-
+fileNameOfPlot <- 'wordCloudAll'
 
 
 # Tibble with one word per row
@@ -44,6 +44,7 @@ words <- words %>%
 topWords <- count(words, word, sort = TRUE)
 
 # Generating word cloud for all messages
+png(fileNameOfPlot, width=16,height=16, units='cm', res=300)
 wordcloud(
   words = topWords$word,
   freq = topWords$n,
@@ -53,4 +54,4 @@ wordcloud(
   rot.per = 0.35,
   colors = brewer.pal(9, "Set1")
 )
-
+dev.off()
