@@ -1,9 +1,7 @@
 # iMessage
 Visualization of iMessages between two people
 
-
-
-We text in swedish, the only time this becomes an issue is when generating the word cloud, see Step 2.C. 
+Data collected from messages in swedish, the only time this becomes an issue is when generating the word cloud, see Step 2.C. 
 
 Code for R.
 
@@ -39,6 +37,8 @@ rightTexter <- 'Alice'
 
 leftTexter <- 'Bob'
 
+The phone the messages were extracted from belongs to Alice.
+Alice is texting on right side of the screen, Bob is texting on the right. 
 
 C.
 
