@@ -1,10 +1,8 @@
 # iMessage
 Visualization of iMessages between two people
 
-Some backgound.
 
-I made this for me (Johan) and my girlfriend (Theo), this is the reason these names apper in the code.
-I'm texting on the right side of the messenger app, Theo is on the left side.
+
 We text in swedish, the only time this becomes an issue is when generating the word cloud, see Step 2.C. 
 
 Code for R.
@@ -27,10 +25,12 @@ Step 2.
 In RStudio.
 
 A.
+
 Run packagesNedded.R to install all necessary packages.
 
 
 B.
+
 Run parseMessages.R to extract data from html-file.
 
 To get correct names change following code:
@@ -40,7 +40,8 @@ rightTexter <- 'Johan'
 leftTexter <- 'Theo'
 
 
-C. 
+C.
+
 Run generateWordCloud.R to generate word cloud. 
 
 Code is written for messages in swedish, to change language change following code:
@@ -60,5 +61,6 @@ If you get warnings saying  "...could not be fit on page. It will not be plotted
 
 
 D.
+
 Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
 /Johan Wållgren 20180414
