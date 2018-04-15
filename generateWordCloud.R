@@ -1,6 +1,9 @@
 # Generating word cloud of most frequent words in messages
 # By Johan Wållgren 201804
 
+# NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin word cloud.
+# If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
+
 library(tidyverse)
 library(tidytext)
 library(tm)
@@ -38,12 +41,11 @@ words <- words %>%
 topWords <- count(words, word, sort = TRUE)
 
 # Generating word cloud for all messages
-set.seed(2018)
 wordcloud(
   words = topWords$word,
   freq = topWords$n,
-  min.freq = 5,
-  max.words = 500,
+  min.freq = 10,
+  max.words = 150,
   random.order = FALSE,
   rot.per = 0.35,
   colors = brewer.pal(8, "Set1")
