@@ -54,5 +54,7 @@ words <- filter(words, person == leftTexter)
 
 The word cloud is generated as a plot which can be saved as a jpeg or a pdf.
 
+NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin word cloud.
+If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
 
 /Johan Wållgren 20180414
