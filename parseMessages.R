@@ -8,16 +8,16 @@
 # A tibble: 25,569 x 11
 # person text                dateTime            date   year  month day   time  hour  weekday    id
 # <fct>  <chr>               <dttm>              <chr>  <chr> <chr> <chr> <chr> <chr> <fct>   <int>
-# 1 Johan  Till telefon        2012-11-11 20:33:00 2012-~ 2012  11    11    20:3~ 20    Sunday      1
-# 2 Theo   Haal                2012-11-13 22:51:39 2012-~ 2012  11    13    22:5~ 22    Tuesday     2
-# 3 Theo   Test sms til ad fi~ 2012-11-14 16:27:03 2012-~ 2012  11    14    16:2~ 16    Wednes~     3
+# 1 Alice  Till telefon        2012-11-11 20:33:00 2012-~ 2012  11    11    20:3~ 20    Sunday      1
+# 2 Bob   Haal                2012-11-13 22:51:39 2012-~ 2012  11    13    22:5~ 22    Tuesday     2
+# 3 Bob   Test sms til ad fi~ 2012-11-14 16:27:03 2012-~ 2012  11    14    16:2~ 16    Wednes~     3
 
 library(XML)
 library(tidyverse)
 
 # Names of texters
-rightTexter <- 'Johan'
-leftTexter <- 'Theo'
+rightTexter <- 'Alice'
+leftTexter <- 'Bob'
 
 # Parsing data
 fileWithData <-
