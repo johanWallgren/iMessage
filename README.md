@@ -15,7 +15,7 @@ Extract iMessage data from phone.
 
 I used EaseUS MobieMover Free. (https://www.easeus.com/phone-transfer/mobimover-free.html)
 
-DO NOT export all messages, select only one contact. One contact may have more then one phone number which is ok.
+DO NOT export all messages, use Custom export to select only one contact from messages. One contact may have more then one phone number which is ok.
 
 The message data is exported to a html-file.
 
