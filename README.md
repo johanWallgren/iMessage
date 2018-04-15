@@ -26,10 +26,12 @@ Rename the file to avoid re-writing to same file.
 Step 2.
 In RStudio.
 
-A. Run packagesNedded.R to install all necessary packages.
+A.
+Run packagesNedded.R to install all necessary packages.
 
 
-B. Run parseMessages.R to extract data from html-file.
+B.
+Run parseMessages.R to extract data from html-file.
 
 To get correct names change following code:
 
@@ -38,7 +40,8 @@ rightTexter <- 'Johan'
 leftTexter <- 'Theo'
 
 
-C. Run generateWordCloud.R to generate word cloud. 
+C. 
+Run generateWordCloud.R to generate word cloud. 
 
 Code is written for messages in swedish, to change language change following code:
 
@@ -47,9 +50,7 @@ mainLanguage <- 'swedish'
 Word cloud for only one texter can be created by changing following code:
 
 words <- filter(words, person == leftTexter || person == rightTexter) 
-
 to
-
 words <- filter(words, person == leftTexter)
 
 The word cloud is generated as a plot which can be saved as a jpeg or a pdf.
@@ -59,6 +60,5 @@ If you get warnings saying  "...could not be fit on page. It will not be plotted
 
 
 D.
-
 Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
 /Johan Wållgren 20180414
