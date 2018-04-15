@@ -35,9 +35,9 @@ Run parseMessages.R to extract data from html-file.
 
 To get correct names change following code:
 
-rightTexter <- 'Johan'
+rightTexter <- 'phoneOwner'
 
-leftTexter <- 'Theo'
+leftTexter <- 'contact'
 
 
 C.
@@ -56,7 +56,7 @@ words <- filter(words, person == leftTexter)
 
 The word cloud is generated as a plot which can be saved as a jpeg or a pdf.
 
-NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin word cloud.
+NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin the word cloud.
 If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
 
 
