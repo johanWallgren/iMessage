@@ -63,4 +63,5 @@ If you get warnings saying  "...could not be fit on page. It will not be plotted
 D.
 
 Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
+
 /Johan Wållgren 20180414
