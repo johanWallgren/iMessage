@@ -35,9 +35,9 @@ Run parseMessages.R to extract data from html-file.
 
 To get correct names change following code:
 
-rightTexter <- 'phoneOwner'
+rightTexter <- 'Alice'
 
-leftTexter <- 'contact'
+leftTexter <- 'Bob'
 
 
 C.
