@@ -57,4 +57,8 @@ The word cloud is generated as a plot which can be saved as a jpeg or a pdf.
 NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin word cloud.
 If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
 
+
+D.
+
+Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
 /Johan Wållgren 20180414
