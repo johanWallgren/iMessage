@@ -24,7 +24,7 @@ In RStudio.
 
 A.
 
-Run packagesNedded.R to install all necessary packages.
+Run requierments.R to install all necessary packages.
 
 
 B.
@@ -65,5 +65,6 @@ If you get warnings saying  "...could not be fit on page. It will not be plotted
 D.
 
 Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
+Pictures are saved to your work directory.
 
 /Johan Wållgren 20180414
