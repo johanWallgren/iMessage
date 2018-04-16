@@ -67,4 +67,4 @@ D.
 Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
 Pictures are saved to your work directory.
 
-/Johan Wållgren 20180414
+/Johan Wållgren April 2018
