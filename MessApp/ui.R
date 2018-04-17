@@ -25,7 +25,7 @@ hoursOfDay <- c(0:23)
 
 ##########################################################################
 # UI
-ui <- fluidPage(titlePanel("DEV visualization"),
+ui <- fluidPage(titlePanel("Message visualization"),
                 sidebarLayout(
                   sidebarPanel(
                     ####################################
@@ -74,6 +74,40 @@ ui <- fluidPage(titlePanel("DEV visualization"),
                       max = max(hoursOfDay),
                       value = c(min(hoursOfDay), max(hoursOfDay)),
                       step = 1
+                    ),
+                    
+                    ########################
+                    # Inputs for plot,
+                    # None = 0
+                    # Weekdays = weekdays
+                    # Years = years
+                    # Hours = hours
+                    # People = people
+                    # Value for Y-axis is always number of messages
+                    
+                    # What to plot on x-axis
+                    selectInput(
+                      "xValue",
+                      label = "Select variable on X-axis",
+                      choices = list(
+                        "Weekdays" = 'weekday',
+                        "Years" = 'year',
+                        "Hours" = 'hour',
+                        "Person" = "person"
+                      ),
+                      selected = 'weekday'
+                    ),
+                    
+                    # What to use for fill
+                    selectInput(
+                      "fillValue",
+                      label = "Select variable for color fill",
+                      choices = list(
+                        "Weekdays" = 'weekday',
+                        "Years" = 'year',
+                        "Person" = "person"
+                      ),
+                      selected = "person"
                     )
                     
                   ),
@@ -81,7 +115,6 @@ ui <- fluidPage(titlePanel("DEV visualization"),
                   # Main panel
                   
                   mainPanel(tabsetPanel(
-                    
                     ########################
                     tabPanel(
                       "Wordcloud",
@@ -98,35 +131,10 @@ ui <- fluidPage(titlePanel("DEV visualization"),
                       
                       textOutput("selectedX"),
                       textOutput("selectedFill"),
-                      textOutput("selectedFacett"),
-                      plotOutput(outputId = "interactiveMessagePlot"),
                       
-                      ########################
-                      # Inputs for plot, 
-                      # None = 0 
-                      # Weekdays = weekdays 
-                      # Years = years 
-                      # Hours = hours 
-                      # People = people
-                      # Value for Y-axis is always number of messages
+                      plotOutput(outputId = "interactiveMessagePlot")
                       
-                      # What to plot on x-axis
-                      selectInput("xvalue", label = "Select variable on X-axis", 
-                                  choices = list("Weekdays" = 'weekday', "Years" = 'year', "Hours" = 'hour', "Person" = 'person'), 
-                                  selected = 1),
-                      
-                      # What to use for fill
-                      selectInput("fillValue", label = "Select variable for color fill", 
-                                  choices = list("None" = 0, "Weekdays" = 'weekday', "Years" = 'year', "Person" = 'person'), 
-                                  selected = 4),
-                      
-                      # What to use for facetting
-                      selectInput("facettValue", label = "Select variable for facetting", 
-                                  choices = list("None" = 0, "Weekdays" = 'weekday', "Years" = 'year', "Person" = 'person'), 
-                                  selected = 0)
-
                     )
                   ))
-                  
-                  
+
                 ))
