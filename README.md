@@ -28,14 +28,18 @@ Run requierments.R to install all necessary packages.
 
 
 B.
+In parseMessages.R, change following line so that it points to your html-file.
 
-Run parseMessages.R to extract data from html-file.
+fileWithData <-
+  'D:/Johans/R/iMessage/mobiMover/Message.html'
 
 To get correct names change following code:
 
 rightTexter <- 'Alice'
 
 leftTexter <- 'Bob'
+
+Run parseMessages.R to extract data from html-file.
 
 The phone the messages were extracted from belongs to Alice.
 Alice is texting on right side of the screen, Bob is texting on the left. 
