@@ -28,6 +28,7 @@ Run requierments.R to install all necessary packages.
 
 
 B.
+
 In parseMessages.R, change following line so that it points to your html-file.
 
 fileWithData <-
