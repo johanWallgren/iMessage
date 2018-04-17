@@ -77,7 +77,11 @@ mess <- mutate(mess, weekday = as.factor(weekdays.Date(dateTime))) %>%
   separate(dateTime, c('date','time'), sep = ' ', remove = FALSE) %>%
   separate(date, c('year', 'month', 'day'), sep = '-', remove = FALSE) %>%
   separate(time, c('hour','minute','second'), sep = ':', remove = FALSE) %>%
-  select(-minute, -second)
+  select(-minute, -second) %>%
+  mutate(hour = as.integer(hour)) %>%
+  mutate(year = as.integer(year)) %>%
+  mutate(day = as.integer(day)) %>%
+  mutate(month = as.integer(month))
 
 # Adding row id
 mess$id <- seq.int(nrow(mess))
