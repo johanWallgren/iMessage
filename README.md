@@ -78,7 +78,7 @@ Run generateWordCloud.R to generate picture of wordcloud.
 
 Code is written for messages in swedish, to change language change following code:
 
-mainLanguage <- 'swedish'
+> mainLanguage <- 'swedish'
 
 Word cloud for only one texter can be created by changing following code:
 
@@ -88,7 +88,7 @@ to
 
 A picture is saved to your work directory, change file name with following code:
 
-fileNameOfPlot <- 'wordCloudAll'
+> fileNameOfPlot <- 'wordCloudAll'
 
 NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size when generatin the word cloud.
 If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
