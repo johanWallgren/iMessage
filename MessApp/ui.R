@@ -56,7 +56,7 @@ ui <- fluidPage(theme = shinytheme("united"),
                                    'Spanish' = 'spanish',
                                    'Swedish' = 'swedish'
                                  ),
-                                 selected = 'swedish',
+                                 selected = 'english',
                                  width = '350px'
                                ),                   
                                
