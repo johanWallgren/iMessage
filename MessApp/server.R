@@ -22,7 +22,9 @@ server <- function(input, output) {
   
   ################################################
   # Using inputs on tab Statistics
-
+  
+  
+  
   output$selectedX <- renderText({
     paste(input$xValue)
   })
@@ -30,7 +32,8 @@ server <- function(input, output) {
   output$selectedFill <- renderText({
     paste(input$fillValue)
   })
-    
+  
+  
   ################################################
   # Possilbe selections:
   # X: Weekdays Years Hours People
@@ -171,5 +174,7 @@ server <- function(input, output) {
       rot.per = 0.35,
       colors = brewer.pal(9, "Set1")
     )
+
   })
+  
 }
