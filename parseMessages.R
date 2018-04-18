@@ -54,8 +54,8 @@ mess <- bind_cols(texter, dates, mesTxt) %>%
   separate(date, c('date', 'time'), sep = ' ')
 
 ############################################################
-# Above: code specific to retreved messages from phone
-# Below: Generic code for presenting data from messages or other.
+# Above this line: code specific to retreved messages from phone
+# Below this line: Generic code for presenting data from messages or other.
 #
 # Get a tibble with this format the rest of the code can be used
 #
