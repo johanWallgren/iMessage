@@ -1,7 +1,7 @@
 # iMessage
 Visualization of iMessages between two people
 
-Data collected from messages in swedish, the only time this can be an issue is when generating the word cloud, see Step 2.D. 
+Data collected from messages in swedish, the only time this can be an issue is when generating the word cloud, see Step 2.E. 
 
 Code for R.
 
@@ -26,10 +26,17 @@ In RStudio.
 
 A.
 
-Run requierments.R to install all necessary packages.
+Create a new project. 
+
+Copy files from GitHub to project folder.
 
 
 B.
+
+Run requierments.R to install all necessary packages.
+
+
+C.
 
 In parseMessages.R, change following line so that it points to your html-file.
 
@@ -48,7 +55,7 @@ Alice is texting on right side of the screen, Bob is texting on the left.
 Run parseMessages.R to extract data from html-file.
 
 
-C.
+D.
 
 Copy file mess.RData to folder ./MessApp/messData/
 
@@ -57,15 +64,15 @@ Replace the sample file with your own.
 
 In the console, write:
 
-library(shiny)
+>library(shiny)
 
-runApp('MessApp')
+>runApp('MessApp')
 
 
 This launchs an app for generating wordcloud and creating plots of stats on messages.
 
 
-D.
+E.
 
 Run generateWordCloud.R to generate picture of wordcloud. 
 
@@ -87,7 +94,7 @@ NOTE: The plot window (the acctual window) in RStudio needs to be lagre in size 
 If you get warnings saying  "...could not be fit on page. It will not be plotted..." make the window lagrer.
 
 
-E.
+F.
 
 Run plotMessageStats.R to generate pictures of stats on messages. Messages per day, year, person, hour.
 Pictures are saved to your work directory.
