@@ -4,6 +4,10 @@
 # Set initial state
 library(shiny)
 library(tidyverse)
+library(tidytext)
+library(tm)
+library(wordcloud)
+library(RColorBrewer)
 
 load('./messData/mess.RData')
 mess <<- mess
@@ -27,9 +31,32 @@ hoursOfDay <- c(0:23)
 # UI
 ui <- fluidPage(titlePanel("Message visualization"),
                 sidebarLayout(
-                  sidebarPanel(
+                  sidebarPanel(width = 3,
                     ####################################
                     # Sidebar panel
+                    
+                    # Selecting language
+                    selectInput(
+                      "language",
+                      label = "Select language",
+                      choices = list(
+                        'Danish' = 'danish',
+                        'Dutch' = 'dutch',
+                        'English' = 'english',
+                        'Finnish' = 'finnish',
+                        'French' = 'french',
+                        'German' = 'german',
+                        'Hungarian' = 'hungarian',
+                        'Italian' = 'italian',
+                        'Norwegian' = 'norwegian',
+                        'Portuguese' = 'portuguese',
+                        'Russian' = 'russian',
+                        'Spanish' = 'spanish',
+                        'Swedish' = 'swedish'
+                      ),
+                      selected = 'english',
+                      width = '350px'
+                    ),                   
                     
                     # Selecting people
                     checkboxGroupInput(
@@ -51,7 +78,8 @@ ui <- fluidPage(titlePanel("Message visualization"),
                       max = max(messYears),
                       value = c(min(messYears), max(messYears)),
                       sep = '',
-                      step = 1
+                      step = 1,
+                      width = '350px'
                     ),
                     
                     # Selecting weekdays
@@ -73,7 +101,8 @@ ui <- fluidPage(titlePanel("Message visualization"),
                       min = min(hoursOfDay),
                       max = max(hoursOfDay),
                       value = c(min(hoursOfDay), max(hoursOfDay)),
-                      step = 1
+                      step = 1,
+                      width = '350px'
                     ),
                     
                     ########################
@@ -95,7 +124,8 @@ ui <- fluidPage(titlePanel("Message visualization"),
                         "Hours" = 'hour',
                         "Person" = "person"
                       ),
-                      selected = 'weekday'
+                      selected = 'weekday',
+                      width = '350px'
                     ),
                     
                     # What to use for fill
@@ -107,7 +137,8 @@ ui <- fluidPage(titlePanel("Message visualization"),
                         "Years" = 'year',
                         "Person" = "person"
                       ),
-                      selected = "person"
+                      selected = "person",
+                      width = '350px'
                     )
                     
                   ),
@@ -122,7 +153,11 @@ ui <- fluidPage(titlePanel("Message visualization"),
                       textOutput("selectedPersons"),
                       textOutput("selectedYears"),
                       textOutput("selectedWeekdays"),
-                      textOutput("selectedHours")
+                      textOutput("selectedHours"),
+                      
+                      plotOutput(outputId = "wordcloudPlot", width = "700px", height = "700px")
+                      
+                      
                     ),
                     
                     ########################
@@ -136,5 +171,5 @@ ui <- fluidPage(titlePanel("Message visualization"),
                       
                     )
                   ))
-
+                  
                 ))
