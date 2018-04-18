@@ -40,14 +40,14 @@ C.
 
 In parseMessages.R, change following line so that it points to your html-file.
 
-fileWithData <-
-  'D:/Johans/R/iMessage/mobiMover/Message.html'
+> fileWithData <-
+>   'D:/Johans/R/iMessage/mobiMover/Message.html'
 
 To get correct names change following code:
 
-rightTexter <- 'Alice'
+> rightTexter <- 'Alice'
 
-leftTexter <- 'Bob'
+> leftTexter <- 'Bob'
 
 The phone the messages were extracted from belongs to Alice.
 Alice is texting on right side of the screen, Bob is texting on the left. 
@@ -64,9 +64,9 @@ Replace the sample file with your own.
 
 In the console, write:
 
->library(shiny)
+> library(shiny)
 
->runApp('MessApp')
+> runApp('MessApp')
 
 
 This launchs an app for generating wordcloud and creating plots of stats on messages.
@@ -82,9 +82,9 @@ mainLanguage <- 'swedish'
 
 Word cloud for only one texter can be created by changing following code:
 
-words <- filter(words, person == leftTexter || person == rightTexter) 
+> words <- filter(words, person == leftTexter || person == rightTexter) 
 to
-words <- filter(words, person == leftTexter)
+> words <- filter(words, person == leftTexter)
 
 A picture is saved to your work directory, change file name with following code:
 
