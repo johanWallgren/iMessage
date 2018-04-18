@@ -52,6 +52,8 @@ C.
 
 Copy file mess.RData to folder ./MessApp/messData/
 
+Replace the sample file with your own.
+
 
 In the console, write:
 
