@@ -40,14 +40,29 @@ rightTexter <- 'Alice'
 
 leftTexter <- 'Bob'
 
-Run parseMessages.R to extract data from html-file.
-
 The phone the messages were extracted from belongs to Alice.
 Alice is texting on right side of the screen, Bob is texting on the left. 
 
+Run parseMessages.R to extract data from html-file.
+
+
 C.
 
-Run generateWordCloud.R to generate word cloud. 
+Copy file mess.RData to folder ./MessApp/messData/
+
+
+In the console, write:
+
+library(shiny)
+
+runApp('MessApp')
+
+
+This launchs an app for generating wordcloud and creating plots of stats on messages.
+
+D.
+
+Run generateWordCloud.R to generate picture of wordcloud. 
 
 Code is written for messages in swedish, to change language change following code:
 
@@ -69,7 +84,7 @@ If you get warnings saying  "...could not be fit on page. It will not be plotted
 
 D.
 
-Run plotMessageStats.R to generate plots of stats on messages. Messages per day, year, person, hour.
+Run plotMessageStats.R to generate pictures of stats on messages. Messages per day, year, person, hour.
 Pictures are saved to your work directory.
 
 /Johan Wållgren April 2018
