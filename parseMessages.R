@@ -3,15 +3,6 @@
 
 # Creates a RData file with a tibble 
 
-# Results should look something like this
-
-# A tibble: 25,569 x 11
-# person text                dateTime            date   year  month day   time  hour  weekday    id
-# <fct>  <chr>               <dttm>              <chr>  <chr> <chr> <chr> <chr> <chr> <fct>   <int>
-# 1 Alice  Till telefon        2012-11-11 20:33:00 2012-~ 2012  11    11    20:3~ 20    Sunday      1
-# 2 Bob   Haal                2012-11-13 22:51:39 2012-~ 2012  11    13    22:5~ 22    Tuesday     2
-# 3 Bob   Test sms til ad fi~ 2012-11-14 16:27:03 2012-~ 2012  11    14    16:2~ 16    Wednes~     3
-
 library(XML)
 library(tidyverse)
 
@@ -61,6 +52,20 @@ mess <- bind_cols(texter, dates, mesTxt) %>%
   select(-value) %>%
   rename(date = value1, text = value2) %>%
   separate(date, c('date', 'time'), sep = ' ')
+
+############################################################
+# Above: code specific to retreved messages from phone
+# Below: Generic code for presenting data from messages or other.
+#
+# Get a tibble with this format the rest of the code can be used
+#
+# A tibble: 25,569 x 4
+# person    date          time        text                                                                      
+# <chr>     <chr>         <chr>       <chr>                                                                     
+# 1 Alice   11-15-2012    16:17:22    Hello! What's up?                                                                     
+# 2 Bob     11-15-2012    16:18:01    Great! You?                                                     
+# 3 Alice   11-15-2012    16:17:36    Same!    
+############################################################
 
 # Fixing the date format
 mess$date <- as.Date(strptime(as.character(mess$date), "%m-%d-%Y"))
