@@ -1,38 +1,6 @@
 # server
 
 server <- function(input, output) {
-  ################################################
-  # Using inputs on sidebar
-  
-  output$selectedPersons <- renderText({
-    paste(input$person)
-  })
-  
-  output$selectedYears <- renderText({
-    paste(input$years[1], input$years[2])
-  })
-  
-  output$selectedWeekdays <- renderText({
-    paste(input$weekdays)
-  })
-  
-  output$selectedHours <- renderText({
-    paste(input$hours[1], input$hours[2])
-  })
-  
-  ################################################
-  # Using inputs on tab Statistics
-  
-  
-  
-  output$selectedX <- renderText({
-    paste(input$xValue)
-  })
-  
-  output$selectedFill <- renderText({
-    paste(input$fillValue)
-  })
-  
   
   ################################################
   # Possilbe selections:
@@ -43,7 +11,7 @@ server <- function(input, output) {
   ################################################
   # Reactive function returning data to plot
   statisticsInput <- reactive({
-
+    
     filtMess <-
       filter(
         mess,
@@ -143,10 +111,10 @@ server <- function(input, output) {
     dataToPlot <- wordcloudInput()
     
     mainLanguage <- input$language
-
+    
     # Tibble with one word per row
     words <- unnest_tokens(dataToPlot, word, text)
-
+    
     # Tibble with stop words to be removed
     stop_words <- as_tibble(stopwords(mainLanguage))
     
@@ -167,14 +135,14 @@ server <- function(input, output) {
     wordcloud(
       words = topWords$word,
       freq = topWords$n,
-      scale=c(4,0.5),
+      scale=c(input$zoom[2],input$zoom[1]),
       min.freq = 10,
-      max.words = 175,
+      max.words = 150,
       random.order = FALSE,
       rot.per = 0.35,
       colors = brewer.pal(9, "Set1")
     )
-
+    
   })
   
 }
