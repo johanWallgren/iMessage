@@ -8,6 +8,7 @@ library(tidytext)
 library(tm)
 library(wordcloud)
 library(RColorBrewer)
+library(shinythemes)
 
 load('./messData/mess.RData')
 mess <<- mess
@@ -29,7 +30,8 @@ hoursOfDay <- c(0:23)
 
 ##########################################################################
 # UI
-ui <- fluidPage(titlePanel("Message visualization"),
+ui <- fluidPage(theme = shinytheme("united"),
+                titlePanel("Message visualization"),
                 sidebarLayout(
                   sidebarPanel(width = 3,
                     ####################################
@@ -150,11 +152,6 @@ ui <- fluidPage(titlePanel("Message visualization"),
                     tabPanel(
                       "Wordcloud",
                       
-                      textOutput("selectedPersons"),
-                      textOutput("selectedYears"),
-                      textOutput("selectedWeekdays"),
-                      textOutput("selectedHours"),
-                      
                       plotOutput(outputId = "wordcloudPlot", width = "700px", height = "700px")
                       
                       
@@ -163,9 +160,6 @@ ui <- fluidPage(titlePanel("Message visualization"),
                     ########################
                     tabPanel(
                       "Statistics",
-                      
-                      textOutput("selectedX"),
-                      textOutput("selectedFill"),
                       
                       plotOutput(outputId = "interactiveMessagePlot")
                       
